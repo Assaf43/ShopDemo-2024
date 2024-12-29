@@ -16,12 +16,12 @@ public class ProductRepository(StoreContext context) : IProductRepository
         context.Products.Remove( product );
     }
 
-    public async Task<Product> GetProductByIdAsync(int id)
+    public async Task<Product?> GetProductByIdAsync(int id)
     {
         return await context.Products.FindAsync(id);
     }
 
-    public async Task<IReadOnlyList<Product>> GetProductsAsync(string brand,string type,string sort)
+    public async Task<IReadOnlyList<Product>> GetProductsAsync(string? brand,string? type,string? sort)
     {
         var query = context.Products.AsQueryable();
 
