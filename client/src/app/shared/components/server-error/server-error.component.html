@@ -1,0 +1,18 @@
+<div class="container mt-5 p-4 bg-gray-100 rounded shadow-lg">
+    <h1 class="text-2xl font-semibold mb-4">Internal server error</h1>
+    @if (errors) {
+        <h5 class="text-red-600">Error: {{errors.message}}</h5>
+        <p class="font-bold mb-2">This is a server error, not clinet</p>
+        <p class="mb-2">what to do next?</p>
+        <ol class="list-decimal ml-5 mb-4">
+            <li class="mb-1">Check the network tab in chrome dev tools</li>
+            <li class="mb-1">Reproduce the error in postman.</li>
+        </ol>
+        <h5 class="text-lg font-semibold mb-2">stack trace</h5>
+        <mat-card class="p-4 bg-white">
+            <code class="block whitespace-pre-wrap">
+                {{errors.details}}
+            </code>
+        </mat-card>
+    }
+</div>
